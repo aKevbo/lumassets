@@ -1,0 +1,1 @@
+var gameInstance=UnityLoader.instantiate("gameContainer","../drifthunters/build/unity/build.json",{onProgress:UnityProgress,Module:{onRuntimeInitialized:function(){UnityProgress(gameInstance,"complete")}}});
