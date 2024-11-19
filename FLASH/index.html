@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/img/newlogo.png" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXGG6SJL6H"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-XXGG6SJL6H");
+    </script>
+
+    <!-- Include Ruffle JS -->
+    <script src="/assets/FLASH/ruffle/ruffle.js"></script>
+
+    <!-- Custom Style for Responsive Flash Player -->
+    <style>
+      body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000; /* Optional: set background color */
+      }
+
+      #flash-player-container {
+        width: 100vw; /* Full viewport width */
+        height: calc(100vw * 0.75); /* Maintain 4:3 aspect ratio */
+        max-width: 100vw; /* Limit to viewport width */
+        max-height: 100vh; /* Limit to viewport height */
+        background-color: #000;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+
+      /* Ensure the Ruffle player fills the container */
+      ruffle-player {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Main Container -->
+    <div id="maincode">
+      <div class="main" id="mainarea">
+        <!-- Flash Player Container -->
+        <div id="flash-player-container">
+          <!-- Ruffle will be injected here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript to Initialize Ruffle -->
+    <script>
+      window.RufflePlayer = window.RufflePlayer || {};
+      window.addEventListener("DOMContentLoaded", (event) => {
+        const ruffle = window.RufflePlayer.newest();
+        const player = ruffle.createPlayer();
+
+        // Append the player to the container
+        const container = document.getElementById("flash-player-container");
+        container.appendChild(player);
+
+        // Load SWF file based on URL parameter (example: ?swf=flashfile.swf)
+        const urlParams = new URLSearchParams(window.location.search);
+        const swfFile = urlParams.get('swf');
+
+        if (swfFile) {
+          player.load("swf/" + swfFile);  // Load the SWF file from the 'swf' folder
+        } else {
+          console.error('No SWF file specified in the URL.');
+        }
+      });
+    </script>
+  </body>
+</html>
