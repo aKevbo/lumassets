@@ -30,10 +30,15 @@ function UnityProgress(gameInstance, progress) {
     if (progress === 1) {
       gameInstance.currentFile = 2;
 
-      // Fetch the second part
-      fetch('/assets/drifthunters/build/unity/itchio.data.unityweb.002')
+      // Fetch the second part (use the full URL)
+      fetch('https://rawcdn.githack.com/aKevbo/lumassets/9b7e4613eb9c96d59294bd89584ecaf3321a0e22/drifthunters/build/unity/itchio.data.unityweb.002')
         .then(response => response.arrayBuffer())
         .then(dataPart2 => {
+          if (!gameInstance.Module.dataFileBytes) {
+            console.error("Data from the first file is not available yet.");
+            return;
+          }
+
           // Combine both parts
           const dataPart1 = gameInstance.Module.dataFileBytes; // First part preloaded by Unity
           const combinedData = new Uint8Array(dataPart1.byteLength + dataPart2.byteLength);
