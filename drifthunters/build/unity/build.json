@@ -1,0 +1,10 @@
+{
+  "TOTAL_MEMORY": 1073741824,
+  "dataUrl": "itchio.data.unityweb.001",
+  "asmCodeUrl": "itchio.asm.code.unityweb",
+  "asmMemoryUrl": "itchio.asm.memory.unityweb",
+  "asmFrameworkUrl": "itchio.asm.framework.unityweb",
+  "backgroundUrl": "itchi.jpg",
+  "splashScreenStyle": "Light",
+  "backgroundColor": "#FFFFFF"
+}

@@ -1,0 +1,24 @@
+{
+   "action": {
+      "default_icon": "icons/128.png",
+      "default_title": "Drift Hunters"
+   },
+   "background": {
+      "service_worker": "worker.js"
+   },
+   "content_security_policy": {
+      "sandbox": "sandbox allow-scripts; script-src 'self' 'unsafe-eval' blob: 'unsafe-inline'; object-src 'self' 'unsafe-eval' blob: 'unsafe-inline'; worker-src 'self' 'unsafe-eval' blob: 'unsafe-inline'"
+   },
+   "description": "Play Drift Hunters Game unblocked for free. Drift Hunters is a 3D drifting game that is powered by the unity engine",
+   "icons": {
+      "128": "icons/128.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4CRAnV5jxtVZk3LSN1AJdFWU5nrDY29EhQMxKoKMEo0eIE93eBwI28w5vTNxEHsv0Ew8cQRKfVzj+CIERBQx2i5D7plOkUuCvy0EqjnXL+sE0/ocExE11G3wPM0hXqRJozVMYTj0KNR4Fye4hG3SQ8x/LAsCoXZdvj7BYxgcDKPpux7PNb3aa+BHfEa3HSQ/4uJ1UZ/v2UIRudYo7dKDdQEBET6EXHndDsF8aMOoGO83kcaAKxJBBtM7334IV0OxKpKD5+zGzr6Q0M42WU5SoffXMkwpiGBdwH/iQe5AxVCDcvyoHFBBUBUtG4PNM1Vua8YqcLnMGbDZ8kcpWTNvLQIDAQAB",
+   "manifest_version": 3,
+   "name": "Drift Hunters Game",
+   "sandbox": {
+      "pages": [ "game.html" ]
+   },
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.1"
+}
